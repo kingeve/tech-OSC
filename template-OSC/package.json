@@ -1,0 +1,19 @@
+{
+  "name": "template-osc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "osc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J.Y.Kang",
+  "license": "ISC",
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "osc-min": "^0.2.0",
+    "socket.io": "^1.7.4"
+  }
+}
