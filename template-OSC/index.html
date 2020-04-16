@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Send and Receive OSC messages</title>
-    
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
 
@@ -18,6 +18,22 @@
     <pre id="output"></pre>
 
     <script>
+
+      // var socket = io.connect();
+      var socket = io('http://localhost:8000');
+      socket.on('osc', function(data) {
+        var output = document.getElementById('output');
+        document.getElementById('x').value = data.x;
+        document.getElementById('y').value = data.y;
+        output.innerHTML = output.innerHTML + 'x: ' + data.x + ' y: ' + data.y + '\n';
+      });
+
+      document.getElementById('send').addEventListener('click', function() {
+        socket.emit('browser', {
+          x: document.getElementById('x').value.trim() || 0,
+          y: document.getElementById('y').value.trim() || 0
+        });
+      });
 
     </script>
 
