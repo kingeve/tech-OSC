@@ -56,8 +56,8 @@ var udpServer = dgram.createSocket('udp4', function(msg, rinfo) {
 //SEND OSC messages
 io.on('connection', function(socket) {
   socket.on('browser', function(data) {
-    if(! remoteOscIp) {
-      return;
+    if(! remoteOscIp) {//in order to validate remoreOscIp, meaning if remoteOscIp is not there
+      return;//this results undefined, which is different from false
     }
     var oscMsg = osc.toBuffer({
       oscType: 'message',
