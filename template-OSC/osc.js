@@ -73,7 +73,7 @@ io.on('connection', function(socket) {
     });
     //socket.send(msg[, offset, length][, port][, address][, callback])
     udpServer.send(oscMsg, 0, oscMsg.length, 57120, remoteOscIp);
-    console.log('Sent OSC message to %s:9999', remoteOscIp);
+    console.log('Sent OSC message to %s:57120', remoteOscIp);// in the class I made it into 9998 which was wrong of course. it has to be 57120
 
   });
 
